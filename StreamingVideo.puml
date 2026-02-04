@@ -1,0 +1,29 @@
+@startuml StreamingVideo
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Streaming de Vídeo | Enrique Garcia Ortega 2243030419
+
+node "Streaming de Vídeo" <<Main>> as Streaming
+
+node "¿Qué es?" as def #LightSkyBlue
+node "Compresión de Vídeo" as comp #LightCyan
+node "Flujo Continuo" as flujo #Lavender
+node "¿Cómo se transmite?" as trans #LightSalmon
+
+Streaming *-- def
+def --> "Distribución de contenido multimedia\npara consumo en tiempo real"
+
+Streaming *-- comp
+comp --> "Uso de Códecs (H.264, HEVC)\nElimina redundancia para reducir\nel peso del archivo"
+
+Streaming *-- flujo
+flujo --> "El servidor envía el video constantemente. \n Aquí entra el Buffer, que es una \n pequeña reserva de video que se descarga por adelantado \n para que, si tu internet parpadea, \n la película no se detenga."
+
+Streaming *-- trans
+trans --> "El video se parte en miles de \n paquetitos de datos \n Para que lleguen rápido, se usan \n CDNs (servidores repartidos por todo el mundo) \n para que el video te llegue desde \n el servidor más cercano a tu casa."
+
+@enduml

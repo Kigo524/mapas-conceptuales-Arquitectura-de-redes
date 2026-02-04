@@ -5,7 +5,7 @@ skinparam node {
     BorderColor black
 }
 
-title Domain Name System (DNS)
+title Domain Name System (DNS) | Enrique Garcia Ortega 2243030419
 
 node "DNS\n(Domain Name System)" <<Main>> as DNS
 
