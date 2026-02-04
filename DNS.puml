@@ -1,0 +1,33 @@
+@startuml
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Domain Name System (DNS)
+
+node "DNS\n(Domain Name System)" <<Main>> as DNS
+
+node "¿Qué es un Servidor DNS?" as def #LightBlue
+node "¿Cómo funciona?" as func #LightCoral
+node "Resolución de Nombres" as resolucion #LightGreen
+node "¿Cómo se utiliza?" as uso #LightSeaGreen
+node "División de Dominios" as division #LightPink
+
+DNS *-- def
+def --> "Es el directorio telefónico de Internet. \n Traduce nombres (www.google.com)\na números llamados Direcciones IP \n (como 142.250.1.1)."
+
+DNS *-- func
+func --> "Mediante una consulta del cliente\n(Resolver) a servidores raíz, TLD\ny autoritativos"
+
+DNS *-- resolucion
+resolucion --> "1. El usuario pide la URL\n2. El Resolver busca la IP\n3. Se establece la conexión con el servidor"
+
+DNS *-- uso
+uso --> "Permite navegar por Internet\nsin recordar IPs numéricas\n(ej. 142.250.1.1)"
+
+DNS *-- division
+division --> "Nivel Superior (TLD): .com, .org\nNivel Geográfico: .mx, .es\nSegundo Nivel: nombre de la empresa"
+
+@enduml
