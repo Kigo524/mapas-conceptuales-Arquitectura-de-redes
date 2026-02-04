@@ -1,4 +1,4 @@
-@startuml
+@startuml DNS
 skinparam backgroundColor white
 skinparam node {
     BackgroundColor<<Main>> Gold
@@ -13,21 +13,29 @@ node "¿Qué es un Servidor DNS?" as def #LightBlue
 node "¿Cómo funciona?" as func #LightCoral
 node "Resolución de Nombres" as resolucion #LightGreen
 node "¿Cómo se utiliza?" as uso #LightSeaGreen
-node "División de Dominios" as division #LightPink
+node "División de Dominios" as division #LightCoral
+node "Se organiza como una escalera:" as organizacion #LightPink
+node "**Raiz** \n El punto final (invisible)" as raiz #LightGoldenRodYellow
+node "**TLD (Nivel Superior)** \n Las terminaciones como .com, .org o .mx" as tld #LightGoldenRodYellow
+node "**Segundo Nivel** \n El nombre de la marca o sitio \n (ej. google, facebook)" as segundo #LightGoldenRodYellow
 
 DNS *-- def
 def --> "Es el directorio telefónico de Internet. \n Traduce nombres (www.google.com)\na números llamados Direcciones IP \n (como 142.250.1.1)."
 
 DNS *-- func
-func --> "Mediante una consulta del cliente\n(Resolver) a servidores raíz, TLD\ny autoritativos"
+func --> "Cada vez que escribes \n una URL en el navegador,\n el DNS entra en acción para buscar \n a qué servidor debe conectarse."
 
 DNS *-- resolucion
-resolucion --> "1. El usuario pide la URL\n2. El Resolver busca la IP\n3. Se establece la conexión con el servidor"
+resolucion --> "Es el proceso de búsqueda. \n Tu computadora pregunta: \n ¿Quién es www.google.com? \n Varios servidores se pasan la bolita \n hasta que uno da la dirección exacta."
 
 DNS *-- uso
-uso --> "Permite navegar por Internet\nsin recordar IPs numéricas\n(ej. 142.250.1.1)"
+uso --> "Cada vez que escribes una URL en el navegador, \n el DNS entra en acción \n para buscar a qué servidor debe conectarse. \n (ej. 142.250.1.1)"
 
 DNS *-- division
-division --> "Nivel Superior (TLD): .com, .org\nNivel Geográfico: .mx, .es\nSegundo Nivel: nombre de la empresa"
+division --* organizacion
+
+organizacion --* raiz
+organizacion --* tld
+organizacion --* segundo
 
 @enduml
