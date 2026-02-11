@@ -1,0 +1,30 @@
+@startuml
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor OrangeRed
+    BorderColor DarkRed
+    FontColor White
+}
+
+title Mapa Conceptual: Servidor Firewall
+
+node "Servidor Firewall" as FW
+
+node "¿Qué es?" as que #White
+node "¿Cómo funciona?" as como #White
+node "Características" as carac #White
+node "¿Cómo se utiliza?" as uso #White
+
+que ---* FW
+que --> "Sistema de seguridad que controla\nel tráfico de red entrante/saliente"
+
+como ---* FW
+como --> "Examina cada paquete de datos y \nlo compara con un conjunto de \nReglas de Seguridad. \nSi el paquete no cumple las reglas \n(por ejemplo, viene de una \nIP bloqueada), lo descarta."
+
+carac ---* FW 
+carac --> "- Filtrado de paquetes: Revisa cabeceras \nde datos \n- Monitorea el estado de las conexiones activas \n- Soporte VPN (Conexiones remotas seguras) \n- IPS: Detecta ataques en tiempo real."
+
+uso ---* FW 
+uso --> "Se ubica en el perímetro de la red\ncomo barrera entre zona publica y zona privada"
+
+@enduml
