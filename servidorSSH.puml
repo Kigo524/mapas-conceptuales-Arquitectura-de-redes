@@ -1,0 +1,37 @@
+@startuml SSH
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Servidor SSH (Secure Shell) | Enrique Garcia Ortega 2243030419
+
+' 1. Definición de Nodos principales
+node "Servidor SSH" <<Main>> as SSH
+node "¿Qué es un servidor SSH?" as que #LightBlue
+node "¿Cómo funciona?" as func #LightCoral
+node "Cifrado y Seguridad" as cifrado #LightGreen
+node "Usos en la Actualidad" as usos #LightSeaGreen
+
+' 2. Definición de Nodos de detalle (Cifrado)
+node "**Cifrado Simétrico** \n Para el intercambio de datos" as c1 #LightGoldenRodYellow
+node "**Cifrado Asimétrico** \n Para la autenticación (Llaves)" as c2 #LightGoldenRodYellow
+node "**Hashing** \n Para verificar integridad" as c3 #LightGoldenRodYellow
+
+' 3. Conexiones y Relaciones
+SSH *-- que
+que --> "Es un protocolo que proporciona un \n canal seguro (túnel) para administrar \n computadoras de forma remota."
+
+SSH *-- func
+func --> "Utiliza un modelo cliente-servidor \n operando usualmente en el **puerto 22**. \n Permite el **Acceso Remoto** mediante consola."
+
+SSH *-- cifrado
+cifrado --* c1
+cifrado --* c2
+cifrado --* c3
+
+SSH *-- usos
+usos --> "- Administración de servidores en la nube. \n - Transferencia segura de archivos (SFTP). \n - Gestión de código en plataformas como Git."
+
+@enduml

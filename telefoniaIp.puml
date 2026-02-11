@@ -1,0 +1,29 @@
+@startuml VoIP
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Telefonía IP | Enrique Garcia Ortega 2243030419
+
+node "Telefonía IP (VoIP)" <<Main>> as VoIP
+
+node "¿Qué es la telefonía IP?" as que #LightBlue
+node "¿Cómo funciona?" as func #LightCoral
+node "Gateway de Voz" as gateway #LightGreen
+node "Principales Ventajas" as ventajas #LightSeaGreen
+
+VoIP *-- que
+que --> "Es una tecnología que permite integrar \n comunicaciones de voz y datos en una \n sola red basada en el protocolo IP."
+
+VoIP *-- func
+func --> "La voz analógica se digitaliza mediante \n **Códecs**, se encapsula en paquetes \n y se transmite vía Internet hacia el receptor."
+
+VoIP *-- gateway
+gateway --> "Es el puente de unión. \n Traduce las señales de la telefonía \n tradicional (analógica) a paquetes \n de datos digitales para la red IP."
+
+VoIP *-- ventajas
+ventajas --> "- **Ahorro:** Menor costo en llamadas globales. \n - **Escalabilidad:** Fácil añadir extensiones. \n - **Integración:** Voz, video y chat en uno."
+
+@enduml
