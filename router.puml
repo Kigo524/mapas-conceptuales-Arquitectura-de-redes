@@ -1,0 +1,28 @@
+@startuml
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor LightSkyBlue
+    BorderColor DarkBlue
+}
+
+title Mapa Conceptual: El Router
+
+node "El Router" as Router
+
+node "¿Qué es?" as que #White
+node "¿Cómo funciona?" as como #White
+node "Características" as carac #White
+node "Fabricantes y Precios" as fab #White
+
+Router *-- que
+que --> "Dispositivo de Capa 3 que\ninterconecta redes y dirige paquetes. Un dispositivo de hardware \nque interconecta diferentes redes (por ejemplo, tu casa con Internet) \ny dirige los paquetes de datos."
+
+Router *-- como
+como --> "Usa Tablas de Enrutamiento\npara elegir la mejor ruta (IP) \nde cada paquete."
+
+Router *-- carac
+carac --> "- NAT (IPs compartidas)\nPermite que varios dispositivos \nusen una sola IP pública. \n- DHCP Asigna IPs automaticas \na tus dispositivos. \n- Puertos WAN/LAN: Conexiones \npara el internet exterior \ny la red local."
+
+Router *-- fab
+fab --> "Principales empresas: Cisco (líder empresarial), \nTP-Link, MikroTik, Juniper, Huawei y ASUS. \n-Ejemplos de precios (2024-2025 approx):\nHogar (Básico): TP-Link Archer AX23 - $60 USD aprox. \nPyme (Avanzado): MikroTik RB5009 - $220 USD aprox. \nEmpresarial (Core): Cisco ISR 4331 - $2,500+ USD \n(depende de la configuración)."
+@enduml
