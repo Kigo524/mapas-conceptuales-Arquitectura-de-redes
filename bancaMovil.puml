@@ -1,0 +1,37 @@
+@startuml BancaMovil
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Banca Móvil | Enrique Garcia Ortega 2243030419
+
+' 1. Definición de Nodos principales
+node "Banca Móvil" <<Main>> as Banca
+node "¿Cómo funcionan las Apps?" as func #LightBlue
+node "¿Qué ventajas tiene?" as ventajas #LightCoral
+node "¿Qué tan seguras son?" as seguridad #LightGreen
+node "Ejemplos de Apps" as ejemplos #LightSeaGreen
+
+' 2. Definición de Nodos de detalle (Ejemplos)
+node "BBVA México" as ex1 #LightGoldenRodYellow
+node "Citibanamex Móvil" as ex2 #LightGoldenRodYellow
+node "Santander SuperMóvil" as ex3 #LightGoldenRodYellow
+
+' 3. Conexiones y Relaciones
+Banca *-- func
+func --> "Se comunican mediante **APIs** seguras con \n los servidores del banco, usando protocolos \n de cifrado (HTTPS/TLS) para enviar datos."
+
+Banca *-- ventajas
+ventajas --> "- Disponibilidad 24/7 sin ir a sucursal. \n - Pagos y transferencias instantáneas (SPEI). \n - Control total de finanzas en tiempo real."
+
+Banca *-- seguridad
+seguridad --> "Son altamente seguras: utilizan \n **biometría**, tokens dinámicos y \n los datos sensibles nunca se guardan \n directamente en el celular."
+
+Banca *-- ejemplos
+ejemplos --* ex1
+ejemplos --* ex2
+ejemplos --* ex3
+
+@enduml

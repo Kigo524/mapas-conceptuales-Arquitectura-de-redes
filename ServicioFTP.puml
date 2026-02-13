@@ -1,0 +1,30 @@
+@startuml FTP_SFTP
+skinparam backgroundColor white
+skinparam node {
+    BackgroundColor<<Main>> Gold
+    BorderColor black
+}
+
+title Servidores FTP y SFTP | Enrique Garcia Ortega 2243030419
+
+' 1. Definición de Nodos principales
+node "Servidores FTP y SFTP" <<Main>> as Servidor
+node "¿Qué es un servidor FTP?" as que #LightBlue
+node "¿Cómo funciona?" as func #LightCoral
+node "Transferencia de archivos" as trans #LightGreen
+node "¿Cómo se utiliza?" as uso #LightSeaGreen
+
+' 3. Conexiones y Relaciones
+Servidor *-- que
+que --> "Es un servicio para transferir archivos \n entre equipos conectados a una red TCP. \n **SFTP** es la versión segura que usa SSH."
+
+Servidor *-- func
+func --> "Usa un modelo cliente-servidor. \n El cliente se conecta al puerto 21 (FTP) \n o puerto 22 (SFTP) para enviar comandos."
+
+Servidor *-- trans
+trans --> "Permite la carga (Upload) y descarga \n (Download) de archivos masivos, gestionando \n permisos de lectura y escritura."
+
+Servidor *-- uso
+uso --> "Se utiliza mediante clientes de software \n como **FileZilla**, WinSCP o por línea \n de comandos para mover sitios web \n o respaldos de bases de datos."
+
+@enduml
